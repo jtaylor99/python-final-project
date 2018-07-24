@@ -8,7 +8,11 @@ def main():
     # this is a yes or no question
     if user_response == 'yes':
         print('These is what we have in stock')
-        print(inventory)
+        with open('inventory.txt') as f:
+            inventory = f.readlines()
+        print(
+            f'{name} in stock:{in_stock} price to rent:{rent} replacement cost:{replacement_value}'
+        )
     elif user_response == 'no':
         print('Thank you have a great day!')
         exit()
@@ -16,7 +20,7 @@ def main():
         print('Please choose a valid option!')
 
     selection = input('Which one would you would like to rent?')
-    for selection in inventory:
+    for movie in inventory:
         if selection in inventory:
             print(selection)
 
