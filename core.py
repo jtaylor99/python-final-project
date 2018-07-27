@@ -1,10 +1,19 @@
-def rental_rates(name, in_stock, sales_tax, replacement_value):
-    '''(int,int,int) -> int
-    Returns the rental rates 
+def create_rent_dictionary(rent_list):
+    rent_dictionary = {}
+    for rent_info in rent_list:
+        items = rent_info.split(',')
+        name = items[0].strip()
+        stock = int(items[1])
+        price = int(items[2])
+        replacement_cost = int(items[3])
+        rent_dictionary[name] = stock, price, replacement_cost
+    return rent_dictionary
+
+
+def create_file_string(rent_dictionary):
+    ''' ({str: int} -> str)
+    turns the user_dictionary
     '''
-    'name' = name
-    'in_stock' = in_stock
-    sales_tax = 0.07
-    replacement_value = replacement_value * 0.10
-    rental_rates = sales_tax + replacement_value
-    return rental_rates
+    for name, stock, price, replacement_cost in rent_dictionary.items():
+        file_string = f'\n{name}, {stock}, {price}, {replacement_cost}'
+    return file_string
