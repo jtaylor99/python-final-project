@@ -13,6 +13,6 @@ def create_rent_dictionary(rent_list):
 def create_file_string(rent_dictionary):
     file_string = 'name, stock, price, replacement_cost'
     for key, value in rent_dictionary.items():
-        name, stock, price, replacement_cost = key, value_1, value_2, value_3
-        file_string = f'{name} ({int(stock)}, {int(price)}, {int(replacement_cost)})'
+        name, stock, price, replacement_cost = rent_dictionary.values()
+        file_string = f'{name} ({stock}, {price)}, {int(replacement_cost)})'
     return file_string
