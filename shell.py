@@ -27,10 +27,12 @@ def main():
         print(rent_dictionary)
     elif user_response == 'no':
         returning = input('What are you returning?:')
-        print(f'Thank you for returning {returning} and have a great day')
-        exit()
-    else:
-        print('Please choose a valid option!')
+        if returning in rent_dictionary:
+            print(f'Thank you for returning {returning} and have a great day')
+            exit()
+        else:
+            print(rent_dictionary)
+            print('Please choose a valid option!')
     while True:
         selection = input('Which one would you would like to rent?')
         if selection in rent_dictionary:
@@ -39,12 +41,16 @@ def main():
         if selection not in rent_dictionary:
             print('please choose a valid option!')
     total = rental_rates(rent_dictionary, selection)
+    days = input('How many days do you want to rent this?')
+    if days.isdigit():
+        total = total * int(days)
     print('----------------')
     print('Here\'s your receipt')
     print('----------------')
     print(f'total: {total:.2f}')
+    print('Thank for your service')
     print('----------------')
-    disk.write_the_history()
+    disk.write_the_history(name, selection)
     file_string = core.create_file_string(rent_dictionary)
     disk.write_file(file_string)
 
