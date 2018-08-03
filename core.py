@@ -14,5 +14,5 @@ def create_file_string(rent_dictionary):
     file_string = 'name, stock, price, replacement_cost'
     for key, value in rent_dictionary.items():
         name, stock, price, replacement_cost = rent_dictionary.values()
-        file_string = f'{name} ({stock}, {price)}, {int(replacement_cost)})'
+        file_string = f'{name} ({stock}, {price}, {(replacement_cost)})'
     return file_string
