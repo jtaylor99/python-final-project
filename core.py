@@ -21,12 +21,38 @@ def rental_rates(rent_dictionary, item_name):
     return rental_rates
 
 
+def movies():
+    rent_dictionary = {
+        'Die Hard': {
+            'In stock': 10,
+            'price': 5,
+            'replacement cost': 10
+        },
+        'Dead Pool': {
+            'In stock': 8,
+            'price': 4,
+            'replacement cost': 13
+        },
+        'Iron Man': {
+            'In stock': 5,
+            'price': 2,
+            'replacement cost ': 4
+        },
+        'Black Panther': {
+            'In stock': 1,
+            'price': 13,
+            'replacement cost': 26
+        }
+    }
+    return rent_dictionary
+
+
 def create_file_string(rent_dictionary):
     file_string = 'name, stock, price, replacement_cost'
     for key, value in rent_dictionary.items():
-        name = value['name']
-        stock = value['stock']
-        price = value['price']
-        replacement_cost = value['replacement_cost']
-    file_string += f'{name}\n{stock}\n{price}\n{replacement_cost}\n'
+        name = key[0]
+        stock = value[0]
+        price = value[1]
+        replacement_cost = value[2]
+    file_string += f'\n{name} {stock} {price} {replacement_cost}'
     return file_string
