@@ -13,7 +13,7 @@ def create_rent_dictionary():
         'Iron Man': {
             'In stock': 5,
             'price': 2,
-            'replacement cost ': 4
+            'replacement cost': 4
         },
         'Black Panther': {
             'In stock': 1,
@@ -37,11 +37,11 @@ def rental_rates(rent_dictionary, item_name):
 
 
 def create_file_string(rent_dictionary):
-    file_string = 'name, stock, price, replacement_cost'
+    file_string = 'name, stock, price, replacement cost'
     for key, value in rent_dictionary.items():
         name = key
         stock = value['In stock']
         price = value['price']
         replacement_cost = value['replacement cost']
-    file_string += f'\n{name} {stock} {price} {replacement_cost}'
+        file_string += f'\n{name} {stock} {price} {replacement_cost}'
     return file_string
