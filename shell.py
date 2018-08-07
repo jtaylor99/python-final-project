@@ -17,6 +17,7 @@ def main():
             print(rent_dictionary)
             break
         elif user_response == 'no':
+            print(rent_dictionary)
             returning = input('What are you returning?:')
             if returning in rent_dictionary:
                 print(
@@ -26,7 +27,7 @@ def main():
             else:
                 print('Please choose a valid option!')
     while True:
-        selection = input('Which one would you would like to rent?')
+        selection = input('Which one would you would like to rent?:')
         if selection in rent_dictionary:
             print(f'you have selected {selection}')
             break
