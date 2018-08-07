@@ -1,6 +1,5 @@
-Die hard 
-In stock: 10
-Deadpool
-In stock: 10
-Iron Man
-In stock: 5
+name, stock, price, replacement cost
+Die Hard 10 5 10
+Dead Pool 8 4 13
+Iron Man 5 2 4
+Black Panther 1 13 26
