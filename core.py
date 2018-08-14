@@ -1,26 +1,14 @@
-def create_rent_dictionary():
-    rent_dictionary = {
-        'Die Hard': {
-            'In stock': 10,
-            'price': 5,
-            'replacement cost': 10
-        },
-        'Dead Pool': {
-            'In stock': 8,
-            'price': 4,
-            'replacement cost': 13
-        },
-        'Iron Man': {
-            'In stock': 5,
-            'price': 2,
-            'replacement cost': 4
-        },
-        'Black Panther': {
-            'In stock': 1,
-            'price': 13,
-            'replacement cost': 26
+def create_rent_dictionary(rent_info):
+    rent_dictionary = {}
+    for line in rent_info:
+        item = line.split(',')
+        key = item[0].strip()
+        value = {
+            'stock': int(item[1]),
+            'price': int(item[2]),
+            'replacement cost': int(item[3]),
         }
-    }
+        rent_dictionary[key] = value
 
     return rent_dictionary
 
@@ -40,8 +28,14 @@ def create_file_string(rent_dictionary):
     file_string = 'name, stock, price, replacement cost'
     for key, value in rent_dictionary.items():
         name = key
-        stock = value['In stock']
+        stock = value['stock']
         price = value['price']
         replacement_cost = value['replacement cost']
-        file_string += f'\n{name} {stock} {price} {replacement_cost}'
+        file_string = f'\n{name}, {stock}, {price}, {replacement_cost}'
     return file_string
+
+
+def stock(item):
+    stock -= 1
+    if stock == 0:
+        del item
