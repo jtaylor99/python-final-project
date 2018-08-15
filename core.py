@@ -4,9 +4,10 @@ def create_rent_dictionary(rent_info):
         item = line.split(',')
         key = item[0].strip()
         value = {
-            'stock': int(item[1].strip()),
-            'price': int(item[2].strip()),
-            'replacement cost': int(item[3].strip()),
+            'name': item[1].strip,
+            'stock': int(item[2].strip()),
+            'price': int(item[3].strip()),
+            'replacement cost': int(item[4].strip()),
         }
         rent_dictionary[key] = value
 
@@ -22,6 +23,11 @@ def rental_rates(rent_dictionary, item_name):
     replacement_cost = rent_dictionary[item_name]['replacement cost'] * 0.10
     rental_rates = price + replacement_cost
     return rental_rates
+
+
+def give_deposit(rent_dictionary, item):
+    deposit = rent_dictionary[item]['replacement cost'] / 10
+    return deposit
 
 
 def create_file_string(rent_dictionary):
