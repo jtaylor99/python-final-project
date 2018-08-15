@@ -4,9 +4,9 @@ def create_rent_dictionary(rent_info):
         item = line.split(',')
         key = item[0].strip()
         value = {
-            'stock': int(item[1]),
-            'price': int(item[2]),
-            'replacement cost': int(item[3]),
+            'stock': int(item[1].strip()),
+            'price': int(item[2].strip()),
+            'replacement cost': int(item[3].strip()),
         }
         rent_dictionary[key] = value
 
@@ -27,15 +27,18 @@ def rental_rates(rent_dictionary, item_name):
 def create_file_string(rent_dictionary):
     file_string = 'name, stock, price, replacement cost'
     for key, value in rent_dictionary.items():
-        name = key
         stock = value['stock']
         price = value['price']
         replacement_cost = value['replacement cost']
-        file_string = f'\n{name}, {stock}, {price}, {replacement_cost}'
+        file_string += f'\n{key}, {stock}, {price}, {replacement_cost}'
     return file_string
 
 
-def stock(item):
-    stock -= 1
-    if stock == 0:
-        del item
+def reduce_stock(rent_dictionary, item_name):
+    rent_dictionary[item_name]['stock'] -= 1
+    return rent_dictionary
+
+
+def return_item(rent_dictionary, item_name):
+    rent_dictionary[item_name]['stock'] += 1
+    return rent_dictionary
