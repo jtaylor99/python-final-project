@@ -1,9 +1,3 @@
-
-JUSTICE checked out Die hard
-JUSTICE checked out Die hard at 2018-08-06 11:27:10.972210
-NATE checked out Black Panther at 2018-08-06 11:31:32.506748
-CODY checked out Iron Man at 2018-08-06 11:34:39.481453
-ANDREW checked out Dead pool at 2018-08-06 11:36:02.616116
-TAYLOR checked out Dead pool at 2018-08-06 11:37:50.019515
-DANNY checked out Dead Pool at 2018-08-06 11:39:34.315934
-TIM checked out Die Hard at 2018-08-06 11:49:20.745289
+PYTHON, check out, 2, 5.58
+DANNY, check out, 1, 6.35
+JUSTICE, check out, 4, 16.51

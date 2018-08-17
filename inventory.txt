@@ -1,5 +1,5 @@
-name, stock, price, replacement cost
-Die Hard 10 5 10
-Dead Pool 8 4 13
-Iron Man 5 2 4
-Black Panther 1 13 26
+ key, name, stock, price, replacement cost
+1,Die Hard, 9, 5, 10
+2,Dead Pool, 7, 4, 13
+3,Iron Man, 6, 2, 4
+4,Black Panther, 0, 13, 26
